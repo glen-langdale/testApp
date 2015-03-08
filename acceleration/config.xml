@@ -12,9 +12,6 @@
         This is a testing app for PhoneGap
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-       Brad Traversy
-    </author>
 
     <!--
         Enable individual API permissions here.
