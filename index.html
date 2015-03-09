@@ -4,9 +4,9 @@
 <head>
 <title>Accelerometer Demo</title>
 <!-- This is needed to access the PhoneGap JavaScript -->
-<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
-<script>
+ <script type="text/javascript" charset="utf-8">
 
     var watchID =  null;
     // Wait for PhoneGap to load
@@ -18,17 +18,17 @@
     }
     
     function startWatch(){
-        alert('watch started');
+     //   alert('watch started');
         var options = {frequency: 1000};
-        alert('frequency applied');
-       watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+       // alert('frequency applied');
+       watchID = navigator.Accelerometer.watchAcceleration(onSuccess, onError, options);
        alert('watchId');
     }
     
     function stopWatch(){
         if(watchID){
             alert('watch stopped');
-            navigator.accelerometer.clearWatch(watchID);
+            navigator.Accelerometer.clearWatch(watchID);
             watchID = null;
         }
     }
@@ -52,8 +52,11 @@
     }
 
     </script>
+    
   </head>
+  
   <body>
       <div id="accelerometer">Waiting for accelerometer..</div>
   </body>
+  
 </html>
