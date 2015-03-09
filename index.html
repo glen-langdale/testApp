@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-  <head>
-    <title>PhoneGap Application</title>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript">
+
+<head>
+<title>Accelerometer Demo</title>
+<!-- This is needed to access the PhoneGap JavaScript -->
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+
+<script>
 
     var watchID =  null;
     // Wait for PhoneGap to load
@@ -15,23 +18,35 @@
     }
     
     function startWatch(){
-        var options = {frequency: 3000};
-        watchID = navigator.accelerometer.watchAcceleration(onSuccess,onError,options);
+        alert('watch started');
+        var options = {frequency: 1000};
+        alert('frequency applied');
+       // watchID = navigator.accelerometer.watchAcceleration(onSuccess,onError, options);
+     //  watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+     navigator.accelerometer.clearWatch(watchID);
+     onSuccess();
+       alert('watchId');
     }
     
     function stopWatch(){
         if(watchID){
+            alert('watch stopped');
             navigator.accelerometer.clearWatch(watchID);
             watchID = null;
         }
     }
     
     function onSuccess(acceleration){
-        var element = document.getElementById('accelerometer');
-        element.innerHTML = ('Acceleration X: '+ acceleration.x + '<br />'+
+        alert('Acceleration X: '+ acceleration.x + '<br />'+
                             'Acceleration Y: '+ acceleration.y + '<br />'+
                             'Acceleration Z: '+ acceleration.z + '<br />'+
-                            'Timestamp: '     + acceleration.timestamp + '<br />');
+                            'Timestamp: '     + acceleration.timestamp + '<br />'
+                            );
+        var element = document.getElementById('accelerometer');
+        element.innerHTML = 'Acceleration X: '+ acceleration.x + '<br />'+
+                            'Acceleration Y: '+ acceleration.y + '<br />'+
+                            'Acceleration Z: '+ acceleration.z + '<br />'+
+                            'Timestamp: '     + acceleration.timestamp + '<br />';
                             
     }
     
