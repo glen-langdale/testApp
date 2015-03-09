@@ -21,10 +21,7 @@
         alert('watch started');
         var options = {frequency: 1000};
         alert('frequency applied');
-       // watchID = navigator.accelerometer.watchAcceleration(onSuccess,onError, options);
-     //  watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-     navigator.accelerometer.clearWatch(watchID);
-     onSuccess();
+       watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
        alert('watchId');
     }
     
