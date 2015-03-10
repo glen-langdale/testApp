@@ -21,14 +21,14 @@
      //   alert('watch started');
         var options = {frequency: 1000};
        // alert('frequency applied');
-       watchID = navigator.Accelerometer.watchAcceleration(onSuccess, onError, options);
+       watchID =navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
        alert('watchId');
     }
     
     function stopWatch(){
         if(watchID){
             alert('watch stopped');
-            navigator.Accelerometer.clearWatch(watchID);
+            navigator.accelerometer.clearWatch(watchID);
             watchID = null;
         }
     }

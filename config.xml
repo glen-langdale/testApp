@@ -23,9 +23,10 @@
         <feature name="http://api.phonegap.com/1.0.0/battery"/>
         <feature name="http://api.phonegap.com/1.0.0/contacts"/>
         <feature name="http://api.phonegap.com/1.0.0/notification"/-->
+        
 	<feature name="Accelerometer">
-    <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
-</feature>
+            <param name="android-package" value="org.apache.cordova.device-motion" />
+        </feature>
 	<!--feature name="http://api.phonegap.com/1.0.0/storage"/>
 	<feature name="http://api.phonegap.com/1.0.0/events"/-->
         <!-- Core plugins -->
@@ -35,7 +36,7 @@
 <gap:plugin name="org.apache.cordova.console" />
 <gap:plugin name="org.apache.cordova.contacts" />
 <gap:plugin name="org.apache.cordova.device" />
-<gap:plugin name="org.apache.cordova.device-motion" />
+<gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
 <gap:plugin name="org.apache.cordova.device-orientation" />
 <gap:plugin name="org.apache.cordova.dialogs" />
 <gap:plugin name="org.apache.cordova.file" />
